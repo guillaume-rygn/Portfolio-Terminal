@@ -106,7 +106,8 @@ svg{
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
+  border-radius: 5px;
 }
 
 /* Track */
