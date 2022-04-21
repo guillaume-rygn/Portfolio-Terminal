@@ -1,0 +1,327 @@
+:root {
+  --text-color: #fff;
+  --text-accent-color: darksalmon;
+  --bg-1: #f27121;
+  --bg-2: #e94057;
+  --bg-3: #8a2387;
+  --username-color: cadetblue;
+  --terminal-bg: rgba(56, 4, 40, 0.9);
+  --terminal-header-bg: #bbb;
+}
+
+/*#051937 #008793 #a8eb12*/
+
+body{
+  background: var(--bg-3); /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+                  to right,
+                  var(--bg-1),
+                  var(--bg-2),
+                  var(--bg-3)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+                  to right,
+                  var(--bg-1),
+                  var(--bg-2),
+                  var(--bg-3)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+}
+
+.animateBg{
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#icon{
+  display: none;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  padding: 25px 15px 2px 15px;
+}
+
+.active{
+  cursor: grabbing !important;
+  user-select: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#icon:hover{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+svg{
+  transform: scale(2.5);
+  margin: 0;
+  padding: 0;
+}
+
+.legend{
+  color: var(--text-color);
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.main{
+  background-color: var(--terminal-bg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50vh;
+  min-width: clamp(300px,90vw, 800px);
+  border-radius: 5px;
+  transition: 0.3s ease;
+  
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+@media only screen and (max-width: 600px) {
+  .main {
+    background-color: var(--terminal-bg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 95vw;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+      rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+      rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    overflow-y: hidden!important;
+  }
+  #terminal-body{
+    height: 74vh!important;
+  }
+
+  table{
+    font-size: 10px!important;
+  }
+  .result{
+    margin: 0!important;
+  }
+}
+
+
+.linealign{
+  margin-left: -50px;
+}
+
+.extendmain{
+  height: 80vh;
+}
+
+.extendcontent{
+  height: 74vh !important;
+}
+
+#banner{
+  background-color: var(--terminal-header-bg);
+  height: 30px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+#banner-button-close{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 0.5px solid #9d252b;
+  position: relative;
+  top: 7px;
+  left: 8px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #ff3b47;
+}
+
+#banner-button-reduce{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 0.5px solid #9d802c;
+  position: relative;
+  top: 7px;
+  left: 13px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #ffc100;
+}
+
+#banner-button-extend{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 0.5px solid #049931;
+  position: relative;
+  top: 7px;
+  left: 18px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: #00d742;
+}
+
+#terminal-body{
+  padding: 10px;
+  font-family: "Ubuntu Mono", monospace;
+  color: var(--text-color);
+  height: 44vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: 0.3s ease;
+}
+
+.title{
+  margin: 0;
+  padding: 0;
+}
+
+.author{
+  color: var(--text-accent-color);
+  text-align: right;
+  margin: 0 0 15px 0;
+}
+
+pre{
+  margin: 0;
+}
+
+code{
+  color: var(--text-accent-color);
+  font-size: 14px;
+}
+
+.commande{
+  display: inline-block;
+  color: var(--username-color);
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 15px;
+  margin: 15px 10px 15px 0;
+  padding: 0;
+}
+
+.resultwrite{
+  display: inline-block;
+  color: var(--text-color);
+  margin: 0 0 0 10px;
+}
+
+.input{
+  display: inline-block;
+  background: none;
+  border: none;
+  font-family: "Ubuntu Mono", monospace;
+  color: var(--text-color);
+  outline: none;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+  width: calc(100% - 180px);
+}
+
+.themeinput{
+  width: calc(100% - 220px) !important;
+}
+
+#input0{
+  margin-left:-8px;
+}
+
+.notfound, ul{
+  margin: 0;
+}
+
+.result{
+  font-family: "Ubuntu Mono", monospace;
+  margin: 0 0 0 15px;
+}
+
+table{
+  border: 1px dashed var(--text-color);
+  padding: 10px;
+}
+
+th{
+  color: var(--username-color);
+  padding: 5px;
+}
+
+td{
+  color: var(--text-color);
+  font-weight: 600;
+  border-top: 1px solid var(--text-color);
+  padding: 5px;
+}
+
+.description{
+  width: 100%;
+}
+
+.center{
+  text-align: center;
+}
+
+a{
+  color: var(--text-accent-color);
+}
+
+.github-corner svg{
+	position:absolute;
+	right:30px;
+	top:30px;
+	mix-blend-mode:darken;
+	color:#eeeeee;
+	fill:#353535;
+	clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+.github-corner:hover .octo-arm{
+	animation:octocat-wave .56s;
+}
+@keyframes octocat-wave{
+	0%, 100%{
+		transform:rotate(0);
+	}
+	20%, 60%{
+		transform:rotate(-20deg);
+	}
+	40%, 80%{
+		transform:rotate(10deg);
+	}
+}
+
+.ligthen{
+  mix-blend-mode: screen!important;
+  color: var(--bg-3)!important;
+  fill:#F2F2F2!important;
+}
