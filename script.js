@@ -206,9 +206,9 @@ function logKey(e){
           moveBg(historic, result, y);
         } else if (result === "remove"){
           moveBg(historic, result, y);
-        } else if (result === "glassmophism"){
+        } else if (result === "glassmorphism"){
           main.classList.toggle("glassmorphism");
-          if (main.classList.contains("glassmophism")){
+          if (main.classList.contains("glassmorphism")){
             terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
           } else {
             terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
@@ -261,9 +261,9 @@ function logKey(e){
           moveBg(historic, result, y);
         } else if (result === "remove"){
           moveBg(historic, result, y);
-        } else if (result === "glassmophism"){
+        } else if (result === "glassmorphism"){
           main.classList.toggle("glassmorphism");
-          if (main.classList.contains("glassmophism")){
+          if (main.classList.contains("glassmorphism")){
             terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
           } else {
             terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
@@ -326,9 +326,9 @@ function logKey(e){
           moveBg(historic, result, y);
         } else if (result === "remove"){
           moveBg(historic, result, y);
-        } else if (result === "glassmophism"){
+        } else if (result === "glassmorphism"){
           main.classList.toggle("glassmorphism");
-          if (main.classList.contains("glassmophism")){
+          if (main.classList.contains("glassmorphism")){
             terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
           } else {
             terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
