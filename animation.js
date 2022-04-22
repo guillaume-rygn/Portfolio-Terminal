@@ -10,14 +10,11 @@ extend.addEventListener("click", function(){
 });
 
 closeWindow.addEventListener("click", function(){
-  main.remove();
+  main.style.animation = "fadeout 0.3s ease";
   icon.style.display="block";
-});
-
-
-icon.addEventListener("dblclick", function(){
-  icon.style.display="none";
-  location.reload();
+  setTimeout( () =>{
+    main.remove();
+  },300);
 });
 
 
@@ -79,3 +76,40 @@ const moveBg = (historic, result, y) =>{
     }
   }
 }
+
+
+closeWindowPopup.addEventListener("click", function(){
+  popup.style.animation = "fadeout 0.3s ease";
+  filter.style.animation = "fadeoutfilter 0.3s ease"
+  setTimeout( () =>{
+    popup.remove();
+    filter.remove();
+    document.getElementById(`input${i}`).focus();
+  },300);
+});
+
+filter.addEventListener("click", function(){
+  popup.style.animation = "fadeout 0.3s ease";
+  filter.style.animation = "fadeoutfilter 0.3s ease"
+  setTimeout( () =>{
+    popup.remove();
+    filter.remove();
+    document.getElementById(`input${i}`).focus();
+  },300);
+});
+
+btnPopup.addEventListener("click", function(){
+  popup.style.animation = "fadeout 0.3s ease";
+  filter.style.animation = "fadeoutfilter 0.3s ease"
+  setTimeout( () =>{
+    popup.remove();
+    filter.remove();
+    document.getElementById(`input${i}`).focus();
+  },300);
+});
+
+
+icon.addEventListener("dblclick", function(){
+  icon.style.display="none";
+  location.reload();
+});

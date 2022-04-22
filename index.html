@@ -13,15 +13,14 @@
 
     <div id="icon">
       <svg height="24" version="1.1" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><g transform="translate(0 -1028.4)"><path d="m3 1030.4c-1.1046 0-2 0.9-2 2v7 2 7c0 1.1 0.8954 2 2 2h9 9c1.105 0 2-0.9 2-2v-7-2-7c0-1.1-0.895-2-2-2h-9-9z" fill="#2c3e50"/><path d="m3 1049.4c-1.1046 0-2-0.9-2-2v-7-2-3h22v3 2 7c0 1.1-0.895 2-2 2h-9-9z" fill="#34495e"/><path d="m4 1032.9v1.1l2 2.4-2 2.3v1.1l3-3.4-3-3.5z" fill="#ecf0f1"/><path d="m3 2c-1.1046 0-2 0.8954-2 2v7 2 3h22v-3-2-7c0-1.1046-0.895-2-2-2h-9-9z" fill="#34495e" transform="translate(0 1028.4)"/><path d="m4 5.125v1.125l3 1.75-3 1.75v1.125l5-2.875-5-2.875zm5 4.875v1h5v-1h-5z" fill="#ecf0f1" transform="translate(0 1028.4)" id="terminalicon"/></g></svg>
-      <!--<img src="images/terminal.png" id="terminalicon"><br>-->
       <p class="legend">Terminal</p>
     </div>
     
     <div class="main"> 
       <div id="banner">
-        <div id="banner-button-close"></div>
-        <div id="banner-button-reduce"></div>
-        <div id="banner-button-extend"></div>
+        <div class="banner-button-close"></div>
+        <div class="banner-button-reduce"></div>
+        <div class="banner-button-extend"></div>
         <p class="banner-title" id="banner-title">Guillaume REYGNER: ~<span id="localisation">/portfolio</span>$</p>
       </div>
 
@@ -40,7 +39,7 @@
         <div id="terminal">
           <div>
             <p class="commande" id="answer0">Guillaume REYGNER:~/portfolio$</p>
-            <input type="text" autofocus class="input" id="input0" tabindex="-1">
+            <input type="text" class="input" id="input0" tabindex="-1">
           </div>
 
       </div>
@@ -54,6 +53,23 @@
     <path class="octo-body" d="M113.2 114.3s3.6 1.6 4.7.6l15-13.7c3-2.4 6-3 8.2-2.7-8-11.2-14-25 3-41 4.7-4.4 10.6-6.4 16.2-6.4.6-1.6 3.6-7.3 11.8-10.7 0 0 4.5 2.7 6.8 16.5 4.3 2.7 8.3 6 12 9.8 3.3 3.5 6.7 8 8.6 12.3 14 3 16.8 8 16.8 8-3.4 8-9.4 11-11.4 11 0 5.8-2.3 11-7.5 15.5-16.4 16-30 9-40 .2 0 3-1 7-5.2 11l-13.3 11c-1 1 .5 5.3.8 5z" fill="currentColor" />
   </svg>
 </a>
+
+<div id="filter"></div>
+  <div id="popup">
+    <div id="bannerpopup">
+      <div class="banner-button-close"></div>
+      <div class="banner-button-reduce"></div>
+      <div class="banner-button-extend"></div>
+      <p class="banner-title-popup">Informations</p>
+    </div>
+    <div id="popupcontent">
+      <img src="images/settings.svg" id="settings">
+      <p class="popupinfo">Ce site reprend dans les grandes lignes le design d'un très célèbre CV sous forme de terminal et <u>uniquement le design</u> car ce site a entièrement été réalisé sous <code>HTML</code>, <code>CSS</code> et <code>Javascript</code> sans faire appel à la moindre librairie externe.
+      Ce site renferme un grand nombre de fonctionnalités (animations cachées, thèmes secrets, etc.) mais également un <code>easter egg</code> bien caché que seul les développeurs pourront trouver. Bonne découverte!</p>
+      <div class="btn"><p id="btn-design">Continuer</p></div>
+    </div>
+  </div>
+
 
 
     <script src="script.js"></script>
