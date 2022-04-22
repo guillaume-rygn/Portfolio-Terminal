@@ -1,9 +1,9 @@
 :root {
   --text-color: #f8f8f2;
   --text-accent-color: #ff5555;
-  --bg-1: #44475a;
-  --bg-2: #6272a4;
-  --bg-3: #8564b3;
+  --bg-1: #648db3;
+  --bg-2: #649ab3;
+  --bg-3: #64b385;
   --username-color: #bd93f9;
   --terminal-bg: #282a36;
   --terminal-header-bg: #6272a4;
@@ -218,10 +218,9 @@ svg{
 }
 
 #banner-button-close{
-  height: 10px;
-  width: 10px;
+  height: 10.5px;
+  width: 10.5px;
   border-radius: 50%;
-  border: 0.5px solid #9d252b;
   position: relative;
   top: 6px;
   left: 8px;
@@ -231,23 +230,21 @@ svg{
 }
 
 #banner-button-reduce{
-  height: 10px;
-  width: 10px;
+  height: 10.5px;
+  width: 10.5px;
   border-radius: 50%;
-  border: 0.5px solid #9d802c;
   position: relative;
   top: 6px;
   left: 13px;
   display: inline-block;
-  cursor: pointer;
+  /*cursor: pointer;*/
   background-color: #ffc100;
 }
 
 #banner-button-extend{
-  height: 10px;
-  width: 10px;
+  height: 10.5px;
+  width: 10.5px;
   border-radius: 50%;
-  border: 0.5px solid #049931;
   position: relative;
   top: 6px;
   left: 18px;
@@ -364,9 +361,9 @@ a{
 	position:absolute;
 	right:30px;
 	top:30px;
-	mix-blend-mode:screen;
-	color: var(--bg-3);
-	fill:#F2F2F2;
+  mix-blend-mode: darken;
+  color: #eeeeee;
+  fill:var(--terminal-bg);
 	clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 .github-corner:hover .octo-arm{
@@ -385,9 +382,9 @@ a{
 }
 
 .ligthen{
-  mix-blend-mode: darken!important;
-  color: #eeeeee!important;
-  fill:#353535!important;
+  mix-blend-mode: screen!important;
+  color: #353535!important;
+  fill:#F2F2F2!important;
 }
 
 .glassmorphism{

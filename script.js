@@ -15,7 +15,7 @@ let banner = document.getElementById("banner");
 let historic = [];
 let theme = 1;
 let numberTheme;
-let nameTheme = "classique";
+let nameTheme = "dracula";
 let secret = 0;
 let y = 0;
 
@@ -104,15 +104,15 @@ function logKey(e){
       if(result[0] === "e"){
         input.value = "experiences";
       }
-      if(result.includes("mes-projets[") && !result.includes("]") && result[11] !== ""){
+      if(result.includes("mes-projets[") && !result.includes("]") && typeof result[12] !== "undefined" &&result[12].match(/\d/)){
         input.value = `${result}]`;
       }
       if(result.includes("mes-projets") && !result.includes("mes-projets[")){
         input.value = "mes-projets[";
       }
       if(result.includes("mes-projets[")){
-        if(result.includes("]") && !result.includes(".website")){      
-          input.value = `${result}.website`;
+        if(result.includes("]") && !result.includes(".website") && result[13] === "]"){      
+          input.value = `${result.substr(0,14)}.website`;
         }
       }
       if(result[0] === "f"){
