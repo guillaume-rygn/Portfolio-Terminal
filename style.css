@@ -1,12 +1,12 @@
 :root {
-  --text-color: #fff;
-  --text-accent-color: darksalmon;
-  --bg-1: #f27121;
-  --bg-2: #e94057;
-  --bg-3: #8a2387;
-  --username-color: cadetblue;
-  --terminal-bg: rgba(56, 4, 40, 0.9);
-  --terminal-header-bg: #bbb;
+  --text-color: #f8f8f2;
+  --text-accent-color: #ff5555;
+  --bg-1: #44475a;
+  --bg-2: #6272a4;
+  --bg-3: #8564b3;
+  --username-color: #bd93f9;
+  --terminal-bg: #282a36;
+  --terminal-header-bg: #6272a4;
 }
 
 /*#051937 #008793 #a8eb12*/
@@ -25,7 +25,10 @@ body{
                   var(--bg-2),
                   var(--bg-3)
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+  height: 100vh;
+  overflow-y: hidden;
 }
+
 
 .animateBg{
   background-size: 300% 300%;
@@ -94,11 +97,12 @@ svg{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 50vh;
+  height: calc(50vh + 10px);
   min-width: clamp(300px,90vw, 800px);
   border-radius: 5px;
   transition: 0.3s ease;
-  
+  scrollbar-color: grey transparent;
+  scrollbar-width: thin;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -112,7 +116,7 @@ svg{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f100; 
+  display: none!important;
 }
  
 /* Handle */
@@ -132,7 +136,7 @@ svg{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 80vh;
+    height: calc(80vh + 10px);
     width: 95vw;
     border-radius: 5px;
     transition: 0.3s ease;
@@ -142,8 +146,14 @@ svg{
       rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     overflow-y: hidden!important;
   }
-  #terminal-body{
-    height: 74vh!important;
+
+  pre{
+    transform: scale(0.5) translateX(-150px);
+  }
+
+  .terminal{
+    overflow-y: scroll!important;
+    height: calc(80vh - 40px)!important;
   }
 
   table{
@@ -152,26 +162,59 @@ svg{
   .result{
     margin: 0!important;
   }
-}
+  .extendmain{
+    height: calc(50vh + 10px)!important;
+  }
+  
+  .extendcontent{
+    height: calc(50vh - 40px) !important;
+  }
 
+  .banner-title{
+    font-size: 11px!important;
+  }
+
+  .ls{
+    display: grid;
+    grid-template-columns:50% 50%!important;
+    grid-gap: 10px 0;
+  }
+
+}
 
 .linealign{
   margin-left: -50px;
 }
 
 .extendmain{
-  height: 80vh;
+  height: calc(80vh + 10px);
 }
 
-.extendcontent{
-  height: 74vh !important;
+@media only screen and (min-width: 601px){
+  .extendcontent{
+  height: calc(80vh - 40px)!important;
+  }
 }
+
 
 #banner{
   background-color: var(--terminal-header-bg);
   height: 30px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  position: relative;
+}
+
+.banner-title{
+  margin: 0;
+  font-size: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
 }
 
 #banner-button-close{
@@ -180,7 +223,7 @@ svg{
   border-radius: 50%;
   border: 0.5px solid #9d252b;
   position: relative;
-  top: 7px;
+  top: 6px;
   left: 8px;
   display: inline-block;
   cursor: pointer;
@@ -193,7 +236,7 @@ svg{
   border-radius: 50%;
   border: 0.5px solid #9d802c;
   position: relative;
-  top: 7px;
+  top: 6px;
   left: 13px;
   display: inline-block;
   cursor: pointer;
@@ -206,18 +249,18 @@ svg{
   border-radius: 50%;
   border: 0.5px solid #049931;
   position: relative;
-  top: 7px;
+  top: 6px;
   left: 18px;
   display: inline-block;
   cursor: pointer;
   background-color: #00d742;
 }
 
-#terminal-body{
+.terminal{
   padding: 10px;
   font-family: "Ubuntu Mono", monospace;
   color: var(--text-color);
-  height: 44vh;
+  height: calc(50vh - 40px);
   overflow-y: scroll;
   overflow-x: hidden;
   transition: 0.3s ease;
@@ -226,12 +269,6 @@ svg{
 .title{
   margin: 0;
   padding: 0;
-}
-
-.author{
-  color: var(--text-accent-color);
-  text-align: right;
-  margin: 0 0 15px 0;
 }
 
 pre{
@@ -268,11 +305,11 @@ code{
   font-size: 15px;
   margin: 0;
   padding: 0;
-  width: calc(100% - 180px);
+  width: calc(100% - 250px);
 }
 
 .themeinput{
-  width: calc(100% - 220px) !important;
+  width: calc(100% - 320px) !important;
 }
 
 #input0{
@@ -286,6 +323,12 @@ code{
 .result{
   font-family: "Ubuntu Mono", monospace;
   margin: 0 0 0 15px;
+}
+
+.ls{
+  display: grid;
+  grid-template-columns:repeat(auto-fill, minmax(20px,200px));
+  grid-gap: 10px 0;
 }
 
 table{
@@ -321,9 +364,9 @@ a{
 	position:absolute;
 	right:30px;
 	top:30px;
-	mix-blend-mode:darken;
-	color:#eeeeee;
-	fill:#353535;
+	mix-blend-mode:screen;
+	color: var(--bg-3);
+	fill:#F2F2F2;
 	clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 .github-corner:hover .octo-arm{
@@ -342,7 +385,16 @@ a{
 }
 
 .ligthen{
-  mix-blend-mode: screen!important;
-  color: var(--bg-3)!important;
-  fill:#F2F2F2!important;
+  mix-blend-mode: darken!important;
+  color: #eeeeee!important;
+  fill:#353535!important;
+}
+
+.glassmorphism{
+  /* From https://css.glass */
+  background: #ffffff33;
+  box-shadow: 0 4px 30px #0000001a;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid #ffffff4d;
 }

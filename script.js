@@ -9,6 +9,9 @@ let closeWindow = document.getElementById("banner-button-close");
 let icon = document.getElementById("icon");
 const root = document.querySelector(":root");
 let svg = document.getElementById("githubcorner");
+let localisation = document.getElementById("localisation");
+let bannerTitle = document.getElementById("banner-title"); 
+let banner = document.getElementById("banner");
 let historic = [];
 let theme = 1;
 let numberTheme;
@@ -30,6 +33,12 @@ window.addEventListener("keydown", logKey);
 function logKey(e){
   input = document.getElementById(`input${i}`)
   let result = input.value.toLowerCase();
+  if (result[result.length -1] === " "){
+    let modification = result.split('');
+    modification.pop();
+    result = Object.values(modification);
+    result = result.join('');
+  }
 
   if(e.ctrlKey && e.code === "KeyU"){
     input.value = "";
@@ -64,17 +73,38 @@ function logKey(e){
 
 
   if (e.key === 'Tab'){
-    if (y === 0){
+    if (y === -1){
+      if(result[0] === "g"){
+        input.value = "Guillaume\\ REYGNER/";
+      }
+      if(result[0] === "c"){
+        input.value = "cd ";
+      }
+      if(result.includes("cd .")){
+        input.value = "cd .secret";
+      }
+      if(result.includes("cd g")){
+        input.value = "cd Guillaume\\ REYGNER/";
+      } if(result[0] === "c" && !result.includes(" ") && result[1] !== "d"){
+        input.value = "clear";
+      }
+    } else if (y === 0){
       if(result[0] === "a"){
         input.value = "a-propos";
       }
-      if(result[0] === "c"){
+      if(result[0] === "c" && !result.includes(" ") && result[1] !== "d"){
         input.value = "clear";
+      }
+      if(result.includes("cd .")){
+        input.value = "cd ..";
+      }
+      if(result.includes("cd t")){
+        input.value = "cd themes";
       }
       if(result[0] === "e"){
         input.value = "experiences";
       }
-      if(result.includes("mes-projets[") && !result.includes("]")){
+      if(result.includes("mes-projets[") && !result.includes("]") && result[11] !== ""){
         input.value = `${result}]`;
       }
       if(result.includes("mes-projets") && !result.includes("mes-projets[")){
@@ -113,14 +143,14 @@ function logKey(e){
         input.value = "themes";
       }
     } else {
-      if(result[0] === "c"){
+      if(result[0] === "c" && !result.includes(" ") && result[1] !== "d"){
         input.value = "cl";
       }
-      if(result[0] === "c" && result.includes("cle")){
-        input.value = "clear";
+      if(result.includes("cd .")){
+        input.value = "cd ..";
       }
-      if(result[0] === "c" && result.includes("cla")){
-        input.value = "classique";
+      if(result[0] === "c"){
+        input.value = "clear";
       }
       if(result[0] === "e"){
         input.value = "exit";
@@ -133,8 +163,7 @@ function logKey(e){
       }
       if(result[0] === "m" && result[1] === "a" && secret == 1){
         input.value = "matrix";
-      }
-      if(result[0] === "m" && result[1] === "e"){
+      } else if(result[0] === "m" || result[1] === "e"){
         input.value = "medallion";
       }
       if(result[0] === "h" && secret == 1){
@@ -142,6 +171,9 @@ function logKey(e){
       }
       if(result[0] === "t"){
         input.value = "themes";
+      }
+      if(result[0] === "u"){
+        input.value = "ubuntu";
       }
 
     }
@@ -159,9 +191,45 @@ function logKey(e){
       answer.insertAdjacentHTML("beforeend", `<p class="resultwrite">${input.value}</p>`);
       i++;
 
+      if (y === -1){
+        if(result === "guillaume reygner" || result === "cd guillaume reygner" || result === "cd guillaume\\ reygner/" || result === "guillaume\\ reygner/" || result === "cd"){
+          y ++;
+          terminal.insertAdjacentHTML("beforeend", `<br>`);
+          localisation.textContent = "/portfolio";
+        } else if(result === "ls" || result === "ls -a"){
+          ls(y, result, secret);
+        } else if(result === "cd .secret"){
+          mailer();
+        } else if (result === "secrets"){
+          secrets();
+        } else if (result === "move"){
+          moveBg(historic, result, y);
+        } else if (result === "remove"){
+          moveBg(historic, result, y);
+        } else if (result === "glassmophism"){
+          main.classList.toggle("glassmorphism");
+          if (main.classList.contains("glassmophism")){
+            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
+          } else {
+            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
+          }
+        } else{
+          terminal = document.getElementById("terminal");
+          terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">${result}: command not found</p>`);
+        }
+      } else 
+      
       if (y === 0){
-        if(result === "help" || result === "ls"){
+        if(result === "help"){
           help();
+        } else if(result === "cd .."){
+          y--;
+          if (historic.length > 1){
+            terminal.insertAdjacentHTML("beforeend", `<br>`);
+          }
+          localisation.textContent = "";
+        } else if(result === "ls" || result === "ls -a"){
+          ls(y, result, secret);
         } else if (result === "a-propos"){
           aboutMe();
         } else if (result === "clear"){
@@ -193,9 +261,17 @@ function logKey(e){
           moveBg(historic, result, y);
         } else if (result === "remove"){
           moveBg(historic, result, y);
-        } else if (result === "themes"){
+        } else if (result === "glassmophism"){
+          main.classList.toggle("glassmorphism");
+          if (main.classList.contains("glassmophism")){
+            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
+          } else {
+            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
+          }
+        } else if (result === "themes" || result === "cd themes"){
           y ++;
           themes();
+          localisation.textContent = "/portfolio/themes";
         }         
         else{
           terminal = document.getElementById("terminal");
@@ -204,26 +280,27 @@ function logKey(e){
         }
       } else {
 
-        if (result === "exit"){
+        if (result === "exit" || result === "cd .."){
           y --;
           terminal.insertAdjacentHTML("beforeend", `<br>`);
+          localisation.textContent = "/portfolio";
         } else if (result === "clear"){
           clear();
-        }else if (result === "classique" || result === "1"){
+        } else if (result === "dracula" || result === "1"){
           numberTheme = 1;
-          nameTheme = "classique";
+          nameTheme = "dracula";
           check();
-          classic();
+          dracula();
         } else if (result === "dark" || result === "2"){
           numberTheme = 2;
           nameTheme = "dark";
           check();
           dark();
-        } else if (result === "dracula" || result === "3"){
+        } else if (result === "ubuntu" || result === "3"){
           numberTheme = 3;
-          nameTheme = "dracula";
+          nameTheme = "ubuntu";
           check();
-          dracula();
+          ubuntu();
         } else if (result === "medallion" || result === "4"){
           numberTheme = 4;
           nameTheme = "medallion";
@@ -239,15 +316,24 @@ function logKey(e){
           nameTheme = "hello kitty";
           check();
           helloKitty();
-        } else if (result === "themes" || result === "ls"){
+        } else if (result === "themes"){
           themes();
+        } else if (result === "ls" || result === "ls -a"){
+          ls(y, result, secret);
         } else if (result === "secrets"){
           secrets();
         } else if (result === "move"){
           moveBg(historic, result, y);
         } else if (result === "remove"){
           moveBg(historic, result, y);
-        }
+        } else if (result === "glassmophism"){
+          main.classList.toggle("glassmorphism");
+          if (main.classList.contains("glassmophism")){
+            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
+          } else {
+            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
+          }
+        } 
         
         else {
           terminal = document.getElementById("terminal");
@@ -256,12 +342,15 @@ function logKey(e){
           <p class="result">/!\\ pour revenir sur le menu principal veuillez utiliser la commande <code>exit</code></p>`);
         }        
       }
-      if (y === 1){
+      if (y === -1){
         terminal = document.getElementById("terminal");
-        terminal.insertAdjacentHTML("beforeend", `<p class="commande" id="answer${i}">Guillaume REYGNER/themes ~$</p><input type="text" autofocus class="input themeinput" id="input${i}" tabindex="-1">`);
+        terminal.insertAdjacentHTML("beforeend", `<p class="commande" id="answer${i}">Guillaume REYGNER:~$:</p><input type="text" autofocus class="input themeinput" id="input${i}" tabindex="-1">`);
+      } else if (y === 1){
+        terminal = document.getElementById("terminal");
+        terminal.insertAdjacentHTML("beforeend", `<p class="commande" id="answer${i}">Guillaume REYGNER:~/portfolio/themes$:</p><input type="text" autofocus class="input themeinput" id="input${i}" tabindex="-1">`);
       } else {
         terminal = document.getElementById("terminal");
-        terminal.insertAdjacentHTML("beforeend", `<p class="commande" id="answer${i}">Guillaume REYGNER ~$</p><input type="text" autofocus class="input" id="input${i}" tabindex="-1">`);
+        terminal.insertAdjacentHTML("beforeend", `<p class="commande" id="answer${i}">Guillaume REYGNER:~/portfolio$</p><input type="text" autofocus class="input" id="input${i}" tabindex="-1">`);
       }
       document.getElementById(`input${i}`).focus();
       terminalBody.scrollTop = terminalBody.scrollHeight;

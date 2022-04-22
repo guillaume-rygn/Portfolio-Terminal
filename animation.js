@@ -36,24 +36,23 @@ document.addEventListener("mouseup", () =>{
 icon.addEventListener("touchstart", () =>{
   icon.classList.add("active");
   icon.addEventListener("touchmove", onDrag);
-});
+}, false);
 
 document.addEventListener("touchend", () =>{
   icon.classList.remove("active");
   icon.removeEventListener("touchmove", onDrag);
-});
+}, false);
 
 
-function onDrag({movementX, movementY}){
+const onDrag = ({movementX, movementY}) =>{
   let getStyle = window.getComputedStyle(icon);
   let left = parseInt(getStyle.left);
   let top = parseInt(getStyle.top);
   icon.style.left = `${left + movementX}px`;
   icon.style.top = `${top + movementY}px`;
-
 }  
 
-function moveBg(historic, result, y){
+const moveBg = (historic, result, y) =>{
   if (result === "move" && document.body.classList.contains("animateBg")){
     terminal = document.getElementById("terminal");
     terminal.insertAdjacentHTML("beforeend", `<p class="result">l'animation du background est deja active. Pour desactiver cette derniere utilisez la commande <code>remove</code>.</p>`);

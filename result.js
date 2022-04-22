@@ -1,4 +1,4 @@
-function aboutMe(){
+const aboutMe = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">
           {<br>
@@ -13,12 +13,12 @@ function aboutMe(){
 };
 
 
-function clear(){
+const clear = () =>{
   terminalBody.innerHTML = "";
   terminalBody.insertAdjacentHTML("afterbegin", `<div id="terminal"></div>`);
 };
 
-function experiences(){
+const experiences = () =>{
   terminal.insertAdjacentHTML("beforeend", `
   <table class="result">
       <tr>
@@ -60,7 +60,7 @@ function experiences(){
   </table>`);
 };
 
-function getCv(){
+const getCv = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">Le téléchargement du CV va commencer.</p>`);
   const a = document.createElement("a");
@@ -70,7 +70,7 @@ function getCv(){
   a.click();
 }
 
-function getLinkedin(){
+const getLinkedin = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">Vous allez être redirigé vers Linkedin.</p>`);
   const a = document.createElement("a");
@@ -79,7 +79,7 @@ function getLinkedin(){
   a.click();
 }
 
-function getGithub(){
+const getGithub = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">Vous allez être redirigé vers Github.</p>`);
   const a = document.createElement("a");
@@ -88,7 +88,7 @@ function getGithub(){
   a.click();
 }
 
-function help(){
+const help = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">
           <ul>
@@ -108,7 +108,7 @@ function help(){
         </p>`);
 };
 
-function hobby(){
+const hobby = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">
           {<br>
@@ -120,7 +120,7 @@ function hobby(){
 };
 
 
-function project(){
+const project = () =>{
   terminal.insertAdjacentHTML("beforeend", 
         `<table class="result">
         <tr>
@@ -168,7 +168,7 @@ function project(){
 };
 
 
-function website(result){
+const website = (result) =>{
   terminal.insertAdjacentHTML("beforeend", 
           `<p class="result">Vous allez être redirigé vers le site web du projet.</p>`);
   const a = document.createElement("a");
@@ -186,4 +186,105 @@ function website(result){
   a.click();
 }
 
+const ls = (y, result, secret) =>{
+  if(y === 0 && result === "ls -a"){
+    terminal.insertAdjacentHTML("beforeend", 
+          `<div class="result ls">
+            <div><code>.</code></div>
+            <div><code>..</code></div>
+            <div>a-propos</div>
+            <div>clear</div>
+            <div>experiences</div>
+            <div>get cv</div>
+            <div>get linkedin</div>
+            <div>get github</div>
+            <div>help</div>
+            <div>passions</div>
+            <div>mes-projets</div>
+            <div>mes-projets[1].website</div>
+            <div>mes-projets[2].website</div>
+            <div>mes-projets[3].website</div>
+            <div>mes-projets[4].website</div>
+            <div><code>themes</code></div>
+          </div>`);
+  } else if (y === 0 && result === "ls"){
+    terminal.insertAdjacentHTML("beforeend", 
+          `<div class="result ls">
+              <div>a-propos</div>
+              <div>clear</div>
+              <div>experiences</div>
+              <div>get cv</div>
+              <div>get linkedin</div>
+              <div>get github</div>
+              <div>help</div>
+              <div>passions</div>
+              <div>mes-projets</div>
+              <div>mes-projets[1].website</div>
+              <div>mes-projets[2].website</div>
+              <div>mes-projets[3].website</div>
+              <div>mes-projets[4].website</div>
+              <div><code>themes</code></div>
+        </div>`);
+  } else if (y === 1 && result === "ls -a"){
+    terminal.insertAdjacentHTML("beforeend", 
+          `<div class="result ls">
+            <div><code>.</code></div>
+            <div><code>..</code></div>
+            <div>dracula</div>
+            <div>dark</div>
+            <div>ubuntu</div>
+            <div>medallion</div>
+        </div>`);
+  } else if (y === 1 && result === "ls -a" && secret === 1){
+    terminal.insertAdjacentHTML("beforeend", 
+          `<div class="result ls">
+            <div><code>.</code></div>
+            <div><code>..</code></div>
+            <div>dracula</div>
+            <div>dark</div>
+            <div>ubuntu</div>
+            <div>medallion</div>
+            <div>matrix</div>
+            <div>hello kitty</div>
+        </div>`);
+  } else if (y === 1  && result === "ls"){
+    terminal.insertAdjacentHTML("beforeend", 
+    `<div class="result ls">
+      <div>dracula</div>
+      <div>dark</div>
+      <div>ubuntu</div>
+      <div>medallion</div>
+    </div>`);
+  } else if (y === 1  && result === "ls" && secret === 1){
+    terminal.insertAdjacentHTML("beforeend", 
+    `<div class="result ls">
+      <div>dracula</div>
+      <div>dark</div>
+      <div>ubuntu</div>
+      <div>medallion</div>
+      <div>matrix</div>
+      <div>hello kitty</div>
+    </div>`);
+  } else if (y === -1 && result === "ls"){
+    terminal.insertAdjacentHTML("beforeend", 
+          `<div class="result ls">
+            <div><code>Guillaume REYGNER</code></div>
+          </div>`);
+  } else if (y === -1 && result === "ls -a"){
+    terminal.insertAdjacentHTML("beforeend",  
+    `<div class="result ls">
+      <div><code>.</code></div>
+      <div><code>.secret</code></div>
+      <div><code>Guillaume REYGNER</code></div>
+    </div>`);
+  }
+}
 
+
+const mailer = () =>{
+  terminal.insertAdjacentHTML("beforeend", 
+        `<p class="result">Bravo vous avez trouvé le dossier <code>.secret</code>.</p>`);
+  const a = document.createElement("a");
+  a.href = "mailto:reygner0224@gmail.com?subject=Votre portfolio est incroyable, êtes-vous à l'écoute d'opportunité ?&body=Guillaume REYGNER > Bonjour à vous qui avez trouvé mon easter egg, Je suis à l'écoute d'opportunités professionnelles donc n'hésitez pas à me contacter en m'envoyant ce courriel avec votre proposition. Je vous recontacterai pour que nous organisions un entretien téléphonique. Merci pour votre temps !";
+  a.click();
+}
