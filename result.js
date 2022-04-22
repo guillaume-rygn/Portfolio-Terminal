@@ -176,11 +176,11 @@ const website = (result) =>{
   if(result === "mes-projets[1].website"){
     a.href = "https://catshop-io.herokuapp.com/";
   } else if (result === "mes-projets[2].website"){
-    a.href = "https://katatemple.herokuapp.com/";
+    a.href = "https://guillaume-rygn.github.io/Kata-Temple/";
   } else if (result === "mes-projets[3].website"){
     a.href = "https://scoreit-thp.herokuapp.com/";
   } else if (result === "mes-projets[4].website"){
-    a.href = "https://monolitharena.herokuapp.com";
+    a.href = "https://guillaume-rygn.github.io/Monolith-Arena/";
   } 
   a.setAttribute("target", "blank");
   a.click();
