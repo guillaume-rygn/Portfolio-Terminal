@@ -13,7 +13,7 @@ closeWindow.addEventListener("click", function(){
   main.style.animation = "fadeout 0.3s ease";
   icon.style.display="block";
   setTimeout( () =>{
-    main.remove();
+    main.classList.toggle("display");
   },300);
 });
 
@@ -78,38 +78,43 @@ const moveBg = (historic, result, y) =>{
 }
 
 
-closeWindowPopup.addEventListener("click", function(){
-  popup.style.animation = "fadeout 0.3s ease";
-  filter.style.animation = "fadeoutfilter 0.3s ease"
-  setTimeout( () =>{
-    popup.remove();
-    filter.remove();
-    document.getElementById(`input${i}`).focus();
-  },300);
+window.addEventListener("click", function(event){
+  if(event.target === closeWindowPopup || event.target === filter || event.target === btnPopup){
+    popup.style.animation = "fadeout 0.3s ease";
+    filter.style.animation = "fadeoutfilter 0.3s ease"
+    setTimeout( () =>{
+      popup.remove();
+      filter.remove();
+      document.getElementById(`input${i}`).focus();
+    },300);
+  };
 });
-
-filter.addEventListener("click", function(){
-  popup.style.animation = "fadeout 0.3s ease";
-  filter.style.animation = "fadeoutfilter 0.3s ease"
-  setTimeout( () =>{
-    popup.remove();
-    filter.remove();
-    document.getElementById(`input${i}`).focus();
-  },300);
-});
-
-btnPopup.addEventListener("click", function(){
-  popup.style.animation = "fadeout 0.3s ease";
-  filter.style.animation = "fadeoutfilter 0.3s ease"
-  setTimeout( () =>{
-    popup.remove();
-    filter.remove();
-    document.getElementById(`input${i}`).focus();
-  },300);
-});
-
 
 icon.addEventListener("dblclick", function(){
+  main.style.animation = "null";
+  terminalBody.innerHTML = "";
+  terminalBody.insertAdjacentHTML("afterbegin",`
+<div class="resume">
+<pre>
+
+ ______   ______     ______     ______   ______   ______     __         __     ______    
+/\\  == \\ /\\  __ \\   /\\  == \\   /\\__  _\\ /\\  ___\\ /\\  __ \\   /\\ \\       /\\ \\   /\\  __ \\   
+\\ \\  _-/ \\ \\ \\/\\ \\  \\ \\  __<   \\/_/\\ \\/ \\ \\  __\\ \\ \\ \\/\\ \\  \\ \\ \\____  \\ \\ \\  \\ \\ \\/\\ \\  
+ \\ \\_\\    \\ \\_____\\  \\ \\_\\ \\_\\    \\ \\_\\  \\ \\_\\    \\ \\_____\\  \\ \\_____\\  \\ \\_\\  \\ \\_____\\ 
+  \\/_/     \\/_____/   \\/_/ /_/     \\/_/   \\/_/     \\/_____/   \\/_____/   \\/_/   \\/_____/ 
+                                                                                   
+  
+</pre></div>
+        <div>Bienvenue sur mon Portfolio ! Pour afficher les commandes disponibles tapez <code>help</code>. Pour valider chaque commande appuyez sur <em>Entrer</em>, vous pouvez utiliser la touche <em>Tabulation</em> afin de vous aider à compléter une commande.</div>
+        <div id="terminal">
+          <div>
+            <p class="commande" id="answer${i}">Guillaume REYGNER:~/portfolio$</p>
+            <input type="text" class="input" id="input${i}" tabindex="-1">
+          </div>
+
+      </div>
+  `);
+  main.classList.toggle("display");
   icon.style.display="none";
-  location.reload();
+  document.getElementById(`input${i}`).focus();
 });

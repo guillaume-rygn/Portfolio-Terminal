@@ -89,8 +89,12 @@ function logKey(e){
       }
       if(result.includes("cd g")){
         input.value = "cd Guillaume\\ REYGNER/";
-      } if(result[0] === "c" && !result.includes(" ") && result[1] !== "d"){
+      } 
+      if(result[0] === "c" && !result.includes(" ") && result[1] !== "d"){
         input.value = "clear";
+      }
+      if(result[0] === ("l")){
+        input.value = "list-secret";
       }
     } else if (y === 0){
       if(result[0] === "a"){
@@ -196,6 +200,7 @@ function logKey(e){
       i++;
 
       if (y === -1){
+        
         if(result === "guillaume reygner" || result === "cd guillaume reygner" || result === "cd guillaume\\ reygner/" || result === "guillaume\\ reygner/" || result === "cd"){
           y ++;
           terminal.insertAdjacentHTML("beforeend", `<br>`);
@@ -206,6 +211,10 @@ function logKey(e){
           mailer();
         } else if (result === "secrets"){
           secrets();
+        } else if (result === "list-secret"){
+          listSecret();
+        } else if (result === "clear"){
+          clear();
         } else if (result === "move"){
           moveBg(historic, result, y);
         } else if (result === "remove"){
@@ -232,6 +241,7 @@ function logKey(e){
             terminal.insertAdjacentHTML("beforeend", `<br>`);
           }
           localisation.textContent = "";
+
         } else if(result === "ls" || result === "ls -a"){
           ls(y, result, secret);
         } else if (result === "a-propos"){
@@ -357,6 +367,13 @@ function logKey(e){
         terminal.insertAdjacentHTML("beforeend", `<p class="commande" id="answer${i}">Guillaume REYGNER:~/portfolio$</p><input type="text" autofocus class="input" id="input${i}" tabindex="-1">`);
       }
       document.getElementById(`input${i}`).focus();
+      if (document.getElementById(`input${i}`).classList.contains("themeinput") && y === -1){
+        document.getElementById(`input${i}`).classList.remove("themeinput");
+        document.getElementById(`input${i}`).classList.add("rootinput");
+      } else if(!document.getElementById(`input${i}`).classList.contains("themeinput") && y === 1){
+        document.getElementById(`input${i}`).classList.add("themeinput");
+        document.getElementById(`input${i}`).classList.remove("rootinput");
+      }
       terminalBody.scrollTop = terminalBody.scrollHeight;
     }
   }

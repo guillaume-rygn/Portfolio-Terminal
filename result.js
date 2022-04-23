@@ -268,6 +268,7 @@ const ls = (y, result, secret) =>{
   } else if (y === -1 && result === "ls"){
     terminal.insertAdjacentHTML("beforeend", 
           `<div class="result ls">
+            <div>list-secret</div>
             <div><code>Guillaume REYGNER</code></div>
           </div>`);
   } else if (y === -1 && result === "ls -a"){
@@ -275,9 +276,23 @@ const ls = (y, result, secret) =>{
     `<div class="result ls">
       <div><code>.</code></div>
       <div><code>.secret</code></div>
+      <div>list-secret</div>
       <div><code>Guillaume REYGNER</code></div>
     </div>`);
   }
+}
+
+const listSecret = () =>{
+  terminal.insertAdjacentHTML("beforeend", 
+        `<p class="result">
+          <ul>
+            <li><code>move</code> : Active l animation du background</li>
+            <li><code>remove</code> : Desactive l animation du background</li>
+            <li><code>glassmorphism</code> : Active/desactive l animation glassmorphisme sur le theme</li>
+            <li><code>secrets</code> : Active les themes secrets</li>
+            <li>/!\\ Ces commandes ne font pas parties de l easter egg a trouver. Bon courage vous y êtes presque!</li>
+          </ul>
+        </p>`);
 }
 
 

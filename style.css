@@ -150,7 +150,6 @@ svg{
 
   #popup{
     width: 75vw!important;
-    height: 60vh!important;
   }
 
   pre{
@@ -324,6 +323,10 @@ code{
   width: calc(100% - 320px) !important;
 }
 
+.rootinput{
+  width: calc(100% - 170px) !important;
+}
+
 #input0{
   margin-left:-8px;
 }
@@ -378,7 +381,7 @@ a{
 	top:30px;
   mix-blend-mode: darken;
   color: #eeeeee;
-  fill:var(--terminal-bg);
+  fill:#171515;
 	clip-path: polygon(0 0, 100% 0, 100% 100%);
 }
 .github-corner:hover .octo-arm{
@@ -506,4 +509,8 @@ a{
 
 u{
   text-decoration-color: #ff5555;
+}
+
+.display{
+  display: none;
 }
