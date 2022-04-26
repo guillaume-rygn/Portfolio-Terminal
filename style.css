@@ -175,10 +175,6 @@ svg{
     height: calc(50vh - 40px) !important;
   }
 
-  .banner-title .banner-title-popup{
-    font-size: 11px!important;
-  }
-
   .ls{
     display: grid;
     grid-template-columns:50% 50%!important;
@@ -204,6 +200,24 @@ svg{
 @media only screen and (max-width: 400px){
   .popupinfo{
   font-size: 12px!important;
+  }
+}
+
+@media only screen and (max-width: 417px){
+  .banner-title{
+    font-size: 8.8px!important;
+  }
+}
+
+@media only screen and (min-width: 418px) and (max-width: 502px){
+  .banner-title{
+    font-size: 10px!important;
+  }
+}
+
+@media only screen and (min-width: 503px) and (max-width: 600px){
+  .banner-title{
+    font-size: 11px!important;
   }
 }
 

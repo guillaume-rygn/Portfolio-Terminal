@@ -294,7 +294,7 @@ function logKey(e){
         }
       } else {
 
-        if (result === "exit" || result === "cd .."){
+        if (result === "exit" || result === "cd .." || result == "cd"){
           y --;
           terminal.insertAdjacentHTML("beforeend", `<br>`);
           localisation.textContent = "/portfolio";

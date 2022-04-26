@@ -6,6 +6,7 @@ const aboutMe = () =>{
             &nbsp;&nbsp;&nbsp;"formation" : "Developpeur 1200h en 6 mois - The Hacking Project",<br>
             &nbsp;&nbsp;&nbsp;"language" : "HTML, CSS, JS, Ruby, Rails, Git",<br>
             &nbsp;&nbsp;&nbsp;"tools" : "GitHub, Heroku, Figma",<br>
+            &nbsp;&nbsp;&nbsp;"softSkills" : "Methode Agile, Teamwork",<br>
             &nbsp;&nbsp;&nbsp;"favoriteIDE" : "VS Code",<br>
             &nbsp;&nbsp;&nbsp;"city" : "Lyon, France"<br>
           }
@@ -225,16 +226,6 @@ const ls = (y, result, secret) =>{
               <div>mes-projets[4].website</div>
               <div><code>themes</code></div>
         </div>`);
-  } else if (y === 1 && result === "ls -a"){
-    terminal.insertAdjacentHTML("beforeend", 
-          `<div class="result ls">
-            <div><code>.</code></div>
-            <div><code>..</code></div>
-            <div>dracula</div>
-            <div>dark</div>
-            <div>ubuntu</div>
-            <div>medallion</div>
-        </div>`);
   } else if (y === 1 && result === "ls -a" && secret === 1){
     terminal.insertAdjacentHTML("beforeend", 
           `<div class="result ls">
@@ -247,14 +238,16 @@ const ls = (y, result, secret) =>{
             <div>matrix</div>
             <div>hello kitty</div>
         </div>`);
-  } else if (y === 1  && result === "ls"){
+  } else if (y === 1 && result === "ls -a"){
     terminal.insertAdjacentHTML("beforeend", 
-    `<div class="result ls">
-      <div>dracula</div>
-      <div>dark</div>
-      <div>ubuntu</div>
-      <div>medallion</div>
-    </div>`);
+          `<div class="result ls">
+            <div><code>.</code></div>
+            <div><code>..</code></div>
+            <div>dracula</div>
+            <div>dark</div>
+            <div>ubuntu</div>
+            <div>medallion</div>
+        </div>`);
   } else if (y === 1  && result === "ls" && secret === 1){
     terminal.insertAdjacentHTML("beforeend", 
     `<div class="result ls">
@@ -264,6 +257,14 @@ const ls = (y, result, secret) =>{
       <div>medallion</div>
       <div>matrix</div>
       <div>hello kitty</div>
+    </div>`);
+  } else if (y === 1  && result === "ls"){
+    terminal.insertAdjacentHTML("beforeend", 
+    `<div class="result ls">
+      <div>dracula</div>
+      <div>dark</div>
+      <div>ubuntu</div>
+      <div>medallion</div>
     </div>`);
   } else if (y === -1 && result === "ls"){
     terminal.insertAdjacentHTML("beforeend", 
