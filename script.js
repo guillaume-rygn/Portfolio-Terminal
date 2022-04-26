@@ -192,6 +192,7 @@ function logKey(e){
     if(result === ""){
       e.preventDefault();
     }else{
+      a = 0;
       historic.unshift(result);
       let answer = document.getElementById(`answer${i}`);
       let inputDelete = document.getElementById(`input${i}`);
