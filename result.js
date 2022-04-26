@@ -164,6 +164,22 @@ const project = () =>{
           <td class="center">Non</td>
           <td class="center"><a href="https://github.com/guillaume-rygn/Monolith-Arena" target="blank">Lien</a></td>
         </tr> 
+        <tr>
+          <td class="center">5</td>
+          <td class="center">EmojiFace</td>
+          <td class="center">HTML CSS JS</td>
+          <td>60 secondes pour reproduire un maximum d'emoji avec votre visage ! Utilisation de la webcam et de la détection de visage grâce à l'IA !</td>
+          <td class="center">Non</td>
+          <td class="center"><a href="https://github.com/guillaume-rygn/EmojiFace" target="blank">Lien</a></td>
+        </tr> 
+        <tr>
+          <td class="center">6</td>
+          <td class="center">Portfolio Terminal</td>
+          <td class="center">HTML CSS JS</td>
+          <td>Présentation de mon portefolio sous forme de terminal. Intégration de l'autocomplétion, de l'historique des commandes, etc. Ce dernier peut s'utiliser comme un vrai terminal.</td>
+          <td class="center">Non</td>
+          <td class="center"><a href="https://github.com/guillaume-rygn/Portfolio-Terminal" target="blank">Lien</a></td>
+        </tr>
     </table><br>
     <p class="result"><em>Vous pouvez voir le site rattaché au projet en utilisant la commande</em> <code>mes-projets[index].website</code><em>, index étant le numéro associé au projet.</em></p>`);
 };
@@ -182,6 +198,10 @@ const website = (result) =>{
     a.href = "https://scoreit-thp.herokuapp.com/";
   } else if (result === "mes-projets[4].website"){
     a.href = "https://guillaume-rygn.github.io/Monolith-Arena/";
+  } else if (result === "mes-projets[5].website"){
+    a.href = "https://guillaume-rygn.github.io/EmojiFace/";
+  } else if (result === "mes-projets[6].website"){
+    a.href = "https://www.guillaumereygner.cf/";
   } 
   a.setAttribute("target", "blank");
   a.click();

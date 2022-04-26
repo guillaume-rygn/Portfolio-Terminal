@@ -268,7 +268,11 @@ function logKey(e){
           website(result);
         } else if (result === "mes-projets[4].website"){
           website(result);
-        }     
+        } else if (result === "mes-projets[5].website"){
+          website(result);
+        }  else if (result === "mes-projets[6].website"){
+          website(result);
+        } 
         else if (result === "secrets"){
           secrets();
         } else if (result === "move"){
