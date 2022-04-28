@@ -271,7 +271,9 @@ function logKey(e){
           website(result);
         } else if (result === "mes-projets[5].website"){
           website(result);
-        }  else if (result === "mes-projets[6].website"){
+        } else if (result === "mes-projets[6].website"){
+          website(result);
+        } else if (result === "mes-projets[7].website"){
           website(result);
         } 
         else if (result === "secrets"){

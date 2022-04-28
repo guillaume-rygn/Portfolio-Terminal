@@ -159,21 +159,29 @@ const project = () =>{
         <tr>
           <td class="center">4</td>
           <td class="center">Monolith Arena</td>
-          <td class="center">HTML CSS JS Heroku</td>
+          <td class="center">HTML CSS JS</td>
           <td>48h pour créer un jeu en 2d sur le thème d'une arène de combat en utilisant les classes de Javascript</td>
           <td class="center">Non</td>
           <td class="center"><a href="https://github.com/guillaume-rygn/Monolith-Arena" target="blank">Lien</a></td>
         </tr> 
         <tr>
           <td class="center">5</td>
+          <td class="center">My Dark Theme.JS</td>
+          <td class="center">HTML CSS JS</td>
+          <td>60 secondes pour reproduire un maximum d'emoji avec votre visage ! Utilisation de la webcam et de la détection de visage grâce à l IA !</td>
+          <td class="center">Non</td>
+          <td class="center"><a href="https://github.com/guillaume-rygn/MyDarkTheme.JS" target="blank">Lien</a></td>
+        </tr> 
+        <tr>
+          <td class="center">6</td>
           <td class="center">EmojiFace</td>
           <td class="center">HTML CSS JS</td>
-          <td>60 secondes pour reproduire un maximum d'emoji avec votre visage ! Utilisation de la webcam et de la détection de visage grâce à l'IA !</td>
+          <td>Generateur de mode sombre avec personnalisation des couleurs du mode sombre et possibilité de copier le code pour l ajouter directement sur son site. Pour le faire fonctionner il faut variabiliser les couleurs sous CSS.</td>
           <td class="center">Non</td>
           <td class="center"><a href="https://github.com/guillaume-rygn/EmojiFace" target="blank">Lien</a></td>
         </tr> 
         <tr>
-          <td class="center">6</td>
+          <td class="center">7</td>
           <td class="center">Portfolio Terminal</td>
           <td class="center">HTML CSS JS</td>
           <td>Présentation de mon portefolio sous forme de terminal. Intégration de l'autocomplétion, de l'historique des commandes, etc. Ce dernier peut s'utiliser comme un vrai terminal.</td>
@@ -199,10 +207,12 @@ const website = (result) =>{
   } else if (result === "mes-projets[4].website"){
     a.href = "https://guillaume-rygn.github.io/Monolith-Arena/";
   } else if (result === "mes-projets[5].website"){
-    a.href = "https://guillaume-rygn.github.io/EmojiFace/";
+    a.href = "https://guillaume-rygn.github.io/MyDarkTheme.JS/";
   } else if (result === "mes-projets[6].website"){
+    a.href = "https://guillaume-rygn.github.io/EmojiFace/";
+  } else if (result === "mes-projets[7].website"){
     a.href = "https://www.guillaumereygner.cf/";
-  } 
+  }
   a.setAttribute("target", "blank");
   a.click();
 }
