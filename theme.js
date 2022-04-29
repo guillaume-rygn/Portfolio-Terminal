@@ -53,11 +53,12 @@ const check = () =>{
 
 const secrets = () =>{
   if (secret === 0){
+    localStorage.setItem(secret, 1);
     terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">
           Vous avez activez des themes supplementaires ! Utilisez le commande <code>themes</code> pour voir vos nouveaux themes. 
         </p>`);
-        secret ++;
+        secret = 1;
   } else {
     terminal.insertAdjacentHTML("beforeend", 
         `<p class="result">

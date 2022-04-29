@@ -29,6 +29,31 @@ window.addEventListener("click",function(){
 
 window.addEventListener("load", function(){
   input.value = "";
+  if(localStorage.getItem(secret) !== null){
+    secret = Number(localStorage.getItem(secret));
+  }
+  if(localStorage.getItem(numberTheme) !== null){
+    switch (localStorage.getItem(numberTheme)){
+      case "1" :
+        dracula();
+        break;
+      case "2" :
+        dark();
+        break;
+      case "3" :
+        ubuntu();
+        break;
+      case "4" :
+        medallion();
+        break;
+      case "5" :
+        matrix();
+        break;
+      case "6" :
+        helloKitty();
+        break;
+    }
+  }
 });
 
 window.addEventListener("keydown", logKey);
@@ -308,31 +333,39 @@ function logKey(e){
         } else if (result === "clear"){
           clear();
         } else if (result === "dracula" || result === "1"){
+          localStorage.setItem(numberTheme, 1);
           numberTheme = 1;
           nameTheme = "dracula";
           check();
           dracula();
         } else if (result === "dark" || result === "2"){
+          localStorage.setItem(numberTheme, 2);
           numberTheme = 2;
           nameTheme = "dark";
           check();
           dark();
         } else if (result === "ubuntu" || result === "3"){
+          localStorage.setItem(numberTheme, 3);
           numberTheme = 3;
           nameTheme = "ubuntu";
           check();
           ubuntu();
         } else if (result === "medallion" || result === "4"){
+          localStorage.setItem(numberTheme, 4);
           numberTheme = 4;
           nameTheme = "medallion";
           check();
           medallion();
         } else if (result === "matrix" || result === "5" && secret == 1){
+          localStorage.setItem('secret', 1);
+          localStorage.setItem(numberTheme, 5);
           numberTheme = 5;
           nameTheme = "matrix";
           check();
           matrix();
         } else if (result === "hello kitty" || result === "6" && secret == 1){
+          localStorage.setItem('secret', 1);
+          localStorage.setItem(numberTheme, 6);
           numberTheme = 6;
           nameTheme = "hello kitty";
           check();
