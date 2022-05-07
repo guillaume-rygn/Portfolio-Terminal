@@ -211,7 +211,7 @@ const website = (result) =>{
   } else if (result === "mes-projets[6].website"){
     a.href = "https://guillaume-rygn.github.io/EmojiFace/";
   } else if (result === "mes-projets[7].website"){
-    a.href = "https://www.guillaumereygner.cf/";
+    a.href = "https://www.guillaumereygner.fr/";
   }
   a.setAttribute("target", "blank");
   a.click();

@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://www.guillaumereygner.cf/"><img src="images/terminal.png" alt="Portfolio" width="200"></a>
+  <a href="https://www.guillaumereygner.fr/"><img src="images/terminal.png" alt="Portfolio" width="200"></a>
   <br>
 Portfolio Terminal<br>
 </h1>
@@ -12,7 +12,7 @@ Portfolio Terminal<br>
 
 ## WEB version 🌐
 
-Le site est en live ici 👉 [portfolio](https://www.guillaumereygner.cf/)
+Le site est en live ici 👉 [portfolio](https://www.guillaumereygner.fr/)
 
 ## Technologies utilisées ⚙️
 
