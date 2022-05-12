@@ -76,6 +76,7 @@ const dracula = () =>{
   root.style.removeProperty('--username-color');
   root.style.removeProperty('--terminal-bg');
   root.style.removeProperty('--terminal-header-bg');
+  bannerTitle.style.removeProperty('color');
   if (svg.classList.contains("ligthen")){
     svg.classList.remove("ligthen");
   }
@@ -90,6 +91,7 @@ const dark = () =>{
   root.style.setProperty('--username-color','#858585');
   root.style.setProperty('--terminal-bg','rgb(0 0 0 / 90%)');
   root.style.setProperty('--terminal-header-bg','#585252');
+  bannerTitle.style.color = "#ffca85";
   if (!svg.classList.contains("ligthen")){
     svg.classList.add("ligthen");
   }
