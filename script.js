@@ -122,8 +122,10 @@ function logKey(e){
         input.value = "list-secret";
       }
     } else if (y === 0){
-      if(result[0] === "a"){
+      if(result[0] === "a" && language === "french"){
         input.value = "a-propos";
+      } else if (result[0] === "a" && language === "english"){
+        input.value = "about-me";
       }
       if(result[0] === "c" && !result.includes(" ") && result[1] !== "d"){
         input.value = "clear";
@@ -137,13 +139,19 @@ function logKey(e){
       if(result[0] === "e"){
         input.value = "experiences";
       }
-      if(result.includes("mes-projets[") && !result.includes("]") && typeof result[12] !== "undefined" &&result[12].match(/\d/)){
+      if(result.includes("mes-projets[") && !result.includes("]") && typeof result[12] !== "undefined" &&result[12].match(/\d/) && language === 'french'){
         input.value = `${result}]`;
       }
-      if(result.includes("mes-projets") && !result.includes("mes-projets[")){
+      if(result.includes("my-projects[") && !result.includes("]") && typeof result[12] !== "undefined" &&result[12].match(/\d/) && language === 'english'){
+        input.value = `${result}]`;
+      }
+      if(result.includes("mes-projets") && !result.includes("mes-projets[") && language === 'french'){
         input.value = "mes-projets[";
       }
-      if(result.includes("mes-projets[")){
+      if(result.includes("my-projects") && !result.includes("my-projects[") && language === 'english'){
+        input.value = "my-projects[";
+      }
+      if(result.includes("mes-projets[") || result.includes("my-projects[")){
         if(result.includes("]") && !result.includes(".website") && result[13] === "]"){      
           input.value = `${result.substr(0,14)}.website`;
         }
@@ -166,8 +174,11 @@ function logKey(e){
       if(result[0] === "h"){
         input.value = "help";
       }
-      if(result[0] === "m" && result !== "mes-projets" && !result.includes("mes-projets[")) {
+      if(result[0] === "m" && result !== "mes-projets" && !result.includes("mes-projets[") && language === "french") {
         input.value = "mes-projets";
+      }
+      if(result[0] === "m" && result !== "my-projects" && !result.includes("my-projects[") && language === "english") {
+        input.value = "my-projects";
       }
       if(result[0] === "p"){
         input.value = "passions";
@@ -248,9 +259,9 @@ function logKey(e){
         } else if (result === "glassmorphism"){
           main.classList.toggle("glassmorphism");
           if (main.classList.contains("glassmorphism")){
-            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
+            terminal.insertAdjacentHTML("beforeend", `${data[language].glassmorphismOff}`);
           } else {
-            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
+            terminal.insertAdjacentHTML("beforeend", `${data[language].glassmorphismOn}`);
           }
         } else{
           terminal = document.getElementById("terminal");
@@ -270,7 +281,7 @@ function logKey(e){
 
         } else if(result === "ls" || result === "ls -a"){
           ls(y, result, secret);
-        } else if (result === "a-propos"){
+        } else if (result === "a-propos" || result === "about-me"){
           aboutMe();
         } else if (result === "clear"){
           clear();
@@ -284,21 +295,21 @@ function logKey(e){
           getGithub();
         } else if (result === "passions"){
           hobby();
-        } else if (result === "mes-projets"){
+        } else if (result === "mes-projets" || result === "my-projects"){
           project();
-        } else if (result === "mes-projets[1].website"){
+        } else if (result === "mes-projets[1].website" || result === "my-projects[1].website"){
           website(result);
-        } else if (result === "mes-projets[2].website"){
+        } else if (result === "mes-projets[2].website" || result === "my-projects[2].website"){
           website(result);
-        } else if (result === "mes-projets[3].website"){
+        } else if (result === "mes-projets[3].website" || result === "my-projects[3].website"){
           website(result);
-        } else if (result === "mes-projets[4].website"){
+        } else if (result === "mes-projets[4].website" || result === "my-projects[4].website"){
           website(result);
-        } else if (result === "mes-projets[5].website"){
+        } else if (result === "mes-projets[5].website" || result === "my-projects[5].website"){
           website(result);
-        } else if (result === "mes-projets[6].website"){
+        } else if (result === "mes-projets[6].website" || result === "my-projects[6].website"){
           website(result);
-        } else if (result === "mes-projets[7].website"){
+        } else if (result === "mes-projets[7].website" || result === "my-projects[7].website"){
           website(result);
         } 
         else if (result === "secrets"){
@@ -310,9 +321,9 @@ function logKey(e){
         } else if (result === "glassmorphism"){
           main.classList.toggle("glassmorphism");
           if (main.classList.contains("glassmorphism")){
-            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
+            terminal.insertAdjacentHTML("beforeend", `${data[language].glassmorphismOff}`);
           } else {
-            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
+            terminal.insertAdjacentHTML("beforeend", `${data[language].glassmorphismOn}`);
           }
         } else if (result === "themes" || result === "cd themes"){
           y ++;
@@ -322,7 +333,7 @@ function logKey(e){
         else{
           terminal = document.getElementById("terminal");
           terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">${result}: command not found
-          <br><br>Tapez la commande <code>help</code> pour afficher la liste des commandes disponibles.</p>`);
+         ${data[language].notfound}`);
         }
       } else {
 
@@ -383,17 +394,16 @@ function logKey(e){
         } else if (result === "glassmorphism"){
           main.classList.toggle("glassmorphism");
           if (main.classList.contains("glassmorphism")){
-            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez de desactiver le design glassmorphisme pour activer ce dernier utilisez la commande <code>glassmophism</code>.`);
+            terminal.insertAdjacentHTML("beforeend", `${data[language].glassmorphismOff}`);
           } else {
-            terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">Vous venez d'activer le design glassmorphisme pour désactiver ce dernier utilisez la commande <code>glassmophism</code>.`);
+            terminal.insertAdjacentHTML("beforeend", `${data[language].glassmorphismOn}`);
           }
         } 
         
         else {
           terminal = document.getElementById("terminal");
           terminal.insertAdjacentHTML("beforeend", `<p class="notfound result">${result}: command not found
-          <br><br>Tapez la commande <code>themes</code> pour afficher la liste des themes disponibles.</p><br>
-          <p class="result">/!\\ pour revenir sur le menu principal veuillez utiliser la commande <code>exit</code></p>`);
+          ${data[language].notfoundmenu}`);
         }        
       }
       if (y === -1){

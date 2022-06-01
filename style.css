@@ -130,7 +130,7 @@ svg{
   background: #555; 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
   .main {
     background-color: var(--terminal-bg);
     position: absolute;
@@ -235,6 +235,18 @@ svg{
   font-size: 12px;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+#languge{
+  margin: 0;
+  font-size: 12px;
+  top: 50%;
+  right: 0;
   transform: translate(-50%, -50%);
   position: absolute;
   display: inline-block;
