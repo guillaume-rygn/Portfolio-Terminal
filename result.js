@@ -90,6 +90,8 @@ const website = (result) =>{
     a.href = "https://guillaume-rygn.github.io/EmojiFace/";
   } else if (result === "mes-projets[7].website" || result === "my-projects[7].website"){
     a.href = "https://www.guillaumereygner.fr/";
+  } else if (result === "mes-projets[8].website" || result === "my-projects[8].website"){
+    a.href = "https://guillaume-rygn.github.io/YouLearn/";
   }
   a.setAttribute("target", "blank");
   a.click();

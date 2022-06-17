@@ -145,6 +145,15 @@ var data = {
     <td class="center">No</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/Portfolio-Terminal" target="blank">Link</a></td>
   </tr>
+  <tr>
+    <td class="center">8</td>
+    <td class="center">YouLearn</td>
+    <td class="center">React JS</td>
+    <td>Turns any YouTube video into an e-learning platform with the ability to view chapters in the video, take notes with associated timestamps, etc.
+    - Under development to integrate a Rails API backend to record information.</td>
+    <td class="center">No</td>
+    <td class="center"><a href="https://github.com/guillaume-rygn/YouLearn" target="blank">Link</a></td>
+  </tr>
   </table><br>
   <p class="result"><em>You can see the site attached to the project using the command</em> <code>my-projects[index].website</code><em>, index being the number associated with the project.</em></p>`,
 
@@ -366,6 +375,15 @@ var data = {
     <td>Présentation de mon portefolio sous forme de terminal. Intégration de l'autocomplétion, de l'historique des commandes, etc. Ce dernier peut s'utiliser comme un vrai terminal.</td>
     <td class="center">Non</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/Portfolio-Terminal" target="blank">Lien</a></td>
+  </tr>
+  <tr>
+    <td class="center">8</td>
+    <td class="center">YouLearn</td>
+    <td class="center">React JS</td>
+    <td>Transforme n'importe quelle vidéo YouTube en une plateforme de e-learning avec la possibilité de voir les chapitres de la video, prendre des notes avec des timestamps associés, etc.
+    - En cours de développement afin d'intégrer un backend Rails API pour enregistrer les informations.</td>
+    <td class="center">Non</td>
+    <td class="center"><a href="https://github.com/guillaume-rygn/YouLearn" target="blank">Lien</a></td>
   </tr>
   </table><br>
   <p class="result"><em>Vous pouvez voir le site rattaché au projet en utilisant la commande</em> <code>mes-projets[index].website</code><em>, index étant le numéro associé au projet.</em></p>`,
