@@ -160,7 +160,7 @@ var data = {
     <td class="center">React JS CSS Rails API</td>
     <td>Creation of a real estate sales platform with a React JS frontend and a Rails API backend.</td>
     <td class="center">Yes</td>
-    <td class="center"><a href="https://guillaume-rygn.github.io/FindHouse/" target="blank">Link</a></td>
+    <td class="center"><a href="https://github.com/guillaume-rygn/FindHouse" target="blank">Link</a></td>
   </tr>
   </table><br>
   <p class="result"><em>You can see the site attached to the project using the command</em> <code>my-projects[index].website</code><em>, index being the number associated with the project.</em></p>`,
@@ -399,7 +399,7 @@ var data = {
   <td class="center">React JS CSS Rails API</td>
   <td>Création d'une plateforme de vente de bien immobilier avec un frontend React JS et un backend Rails API.</td>
   <td class="center">Oui</td>
-  <td class="center"><a href="https://guillaume-rygn.github.io/FindHouse/" target="blank">Link</a></td>
+  <td class="center"><a href="https://github.com/guillaume-rygn/FindHouse" target="blank">Link</a></td>
 </tr>
   </table><br>
   <p class="result"><em>Vous pouvez voir le site rattaché au projet en utilisant la commande</em> <code>mes-projets[index].website</code><em>, index étant le numéro associé au projet.</em></p>`,
