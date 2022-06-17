@@ -148,11 +148,19 @@ var data = {
   <tr>
     <td class="center">8</td>
     <td class="center">YouLearn</td>
-    <td class="center">React JS</td>
+    <td class="center">React JS SCSS</td>
     <td>Turns any YouTube video into an e-learning platform with the ability to view chapters in the video, take notes with associated timestamps, etc.
     - Under development to integrate a Rails API backend to record information.</td>
     <td class="center">No</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/YouLearn" target="blank">Link</a></td>
+  </tr>
+  <tr>
+    <td class="center">9</td>
+    <td class="center">FindHouse</td>
+    <td class="center">React JS CSS Rails API</td>
+    <td>Creation of a real estate sales platform with a React JS frontend and a Rails API backend.</td>
+    <td class="center">Yes</td>
+    <td class="center"><a href="https://guillaume-rygn.github.io/FindHouse/" target="blank">Link</a></td>
   </tr>
   </table><br>
   <p class="result"><em>You can see the site attached to the project using the command</em> <code>my-projects[index].website</code><em>, index being the number associated with the project.</em></p>`,
@@ -385,6 +393,14 @@ var data = {
     <td class="center">Non</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/YouLearn" target="blank">Lien</a></td>
   </tr>
+  <tr>
+  <td class="center">9</td>
+  <td class="center">FindHouse</td>
+  <td class="center">React JS CSS Rails API</td>
+  <td>Création d'une plateforme de vente de bien immobilier avec un frontend React JS et un backend Rails API.</td>
+  <td class="center">Oui</td>
+  <td class="center"><a href="https://guillaume-rygn.github.io/FindHouse/" target="blank">Link</a></td>
+</tr>
   </table><br>
   <p class="result"><em>Vous pouvez voir le site rattaché au projet en utilisant la commande</em> <code>mes-projets[index].website</code><em>, index étant le numéro associé au projet.</em></p>`,
 
