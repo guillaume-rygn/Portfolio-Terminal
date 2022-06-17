@@ -23,7 +23,8 @@ var data = {
     "aboutme" : `{<br>
       &nbsp;&nbsp;&nbsp;"name" : "Guillaume REYGNER",<br>
       &nbsp;&nbsp;&nbsp;"formation": "Developer 1200h in 6 months - The Hacking Project",<br>
-      &nbsp;&nbsp;&nbsp;"language": "HTML, CSS, JS, Ruby, Rails, Git",<br>
+      &nbsp;&nbsp;&nbsp;"language" : "JS, SCSS, HTML, CSS, Ruby, Git",<br>
+      &nbsp;&nbsp;&nbsp;"framework" : "React, Rails",<br>
       &nbsp;&nbsp;&nbsp;"tools": "GitHub, Heroku, Figma",<br>
       &nbsp;&nbsp;&nbsp;"softSkills": "Agile Method, Teamwork",<br>
       &nbsp;&nbsp;&nbsp;"favoriteIDE": "VS Code",<br>
@@ -244,7 +245,8 @@ var data = {
     "aboutme" : `{<br>
       &nbsp;&nbsp;&nbsp;"name" : "Guillaume REYGNER",<br>
       &nbsp;&nbsp;&nbsp;"formation" : "Developpeur 1200h en 6 mois - The Hacking Project",<br>
-      &nbsp;&nbsp;&nbsp;"language" : "HTML, CSS, JS, Ruby, Rails, Git",<br>
+      &nbsp;&nbsp;&nbsp;"language" : "JS, SCSS, HTML, CSS, Ruby, Git",<br>
+      &nbsp;&nbsp;&nbsp;"framework" : "React, Rails",<br>
       &nbsp;&nbsp;&nbsp;"tools" : "GitHub, Heroku, Figma",<br>
       &nbsp;&nbsp;&nbsp;"softSkills" : "Methode Agile, Teamwork",<br>
       &nbsp;&nbsp;&nbsp;"favoriteIDE" : "VS Code",<br>
