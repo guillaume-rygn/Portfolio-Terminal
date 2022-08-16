@@ -125,7 +125,7 @@ var data = {
     <td class="center">5</td>
     <td class="center">My Dark Theme.JS</td>
     <td class="center">HTML CSS JS</td>
-    <td>60 seconds to reproduce as many emoji as possible with your face! Use of webcam and face detection thanks to AI!</td>
+    <td>Dark mode generator with customization of dark mode colors and possibility to copy the code to add it directly to your site. To make it work you have to vary the colors in CSS.</td>
     <td class="center">No</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/MyDarkTheme.JS" target="blank">Link</a></td>
   </tr>
@@ -133,7 +133,7 @@ var data = {
     <td class="center">6</td>
     <td class="center">EmojiFace</td>
     <td class="center">HTML CSS JS</td>
-    <td>Dark mode generator with customization of dark mode colors and possibility to copy the code to add it directly to your site. To make it work you have to vary the colors in CSS.</td>
+    <td>60 seconds to reproduce as many emoji as possible with your face! Use of webcam and face detection thanks to AI!</td>
     <td class="center">No</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/EmojiFace" target="blank">Link</a></td>
   </tr>
@@ -364,7 +364,7 @@ var data = {
     <td class="center">5</td>
     <td class="center">My Dark Theme.JS</td>
     <td class="center">HTML CSS JS</td>
-    <td>60 secondes pour reproduire un maximum d'emoji avec votre visage ! Utilisation de la webcam et de la détection de visage grâce à l IA !</td>
+    <td>Generateur de mode sombre avec personnalisation des couleurs du mode sombre et possibilité de copier le code pour l ajouter directement sur son site. Pour le faire fonctionner il faut variabiliser les couleurs sous CSS.</td>
     <td class="center">Non</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/MyDarkTheme.JS" target="blank">Lien</a></td>
   </tr> 
@@ -372,7 +372,7 @@ var data = {
     <td class="center">6</td>
     <td class="center">EmojiFace</td>
     <td class="center">HTML CSS JS</td>
-    <td>Generateur de mode sombre avec personnalisation des couleurs du mode sombre et possibilité de copier le code pour l ajouter directement sur son site. Pour le faire fonctionner il faut variabiliser les couleurs sous CSS.</td>
+    <td>60 secondes pour reproduire un maximum d'emoji avec votre visage ! Utilisation de la webcam et de la détection de visage grâce à l IA !</td>
     <td class="center">Non</td>
     <td class="center"><a href="https://github.com/guillaume-rygn/EmojiFace" target="blank">Lien</a></td>
   </tr> 
