@@ -91,7 +91,7 @@ const website = (result) =>{
   } else if (result === "mes-projets[7].website" || result === "my-projects[7].website"){
     a.href = "https://www.guillaumereygner.fr/";
   } else if (result === "mes-projets[8].website" || result === "my-projects[8].website"){
-    a.href = "https://guillaume-rygn.github.io/YouLearn/";
+    a.href = "https://www.goyoulearn.com/";
   } else if (result === "mes-projets[9].website" || result === "my-projects[9].website"){
     a.href = "https://guillaume-rygn.github.io/FindHouse/";
   }
