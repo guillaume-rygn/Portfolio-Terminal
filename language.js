@@ -152,7 +152,7 @@ var data = {
     <td>Turns any YouTube video into an e-learning platform with the ability to view chapters in the video, take notes with associated timestamps, etc.
     - Under development to integrate a Rails API backend to record information.</td>
     <td class="center">No</td>
-    <td class="center"><a href="https://github.com/guillaume-rygn/YouLearn" target="blank">Link</a></td>
+    <td class="center"><a href="mailto:reygner0224@gmail.com?subject=This repository is pravate&body=Guillaume REYGNER> this repository is private tell me why you want to have access to it." target="blank">Link</a></td>
   </tr>
   <tr>
     <td class="center">9</td>
@@ -391,7 +391,7 @@ var data = {
     <td>Transforme n'importe quelle vidéo YouTube en une plateforme de e-learning avec la possibilité de voir les chapitres de la video, prendre des notes avec des timestamps associés, etc.
     - En cours de développement afin d'intégrer un backend Rails API pour enregistrer les informations.</td>
     <td class="center">Non</td>
-    <td class="center"><a href="https://github.com/guillaume-rygn/YouLearn" target="blank">Lien</a></td>
+    <td class="center"><a href="mailto:reygner0224@gmail.com?subject=Repository privée&body=Guillaume REYGNER> ce repository est privée dites moi pourquoi vous souhaitez y avoir accès." target="blank">Lien</a></td>
   </tr>
   <tr>
   <td class="center">9</td>
